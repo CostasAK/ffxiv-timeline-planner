@@ -1,4 +1,4 @@
-# ffxiv-timeline-planner
+# FFXIV Timeline Planner
 
 [![Sheet](https://img.shields.io/website?color=0F9D58&label=sheet&logo=Google-Sheets&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1dF8BpTfSFY4FqGcFikslagAdJyvEJvZYIY2_wgwN910)](https://tinyurl.com/y65g5hal)
 [![License](https://img.shields.io/github/license/CostasAK/the-stalk-market)](https://github.com/CostasAK/the-stalk-market/blob/master/LICENSE)<!--
