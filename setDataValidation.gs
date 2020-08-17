@@ -1,4 +1,4 @@
-function setJobSkillValidation (sheet) {
+function setDataValidation (sheet) {
   var numberOfColumns = sheet.getLastColumn()
   var jobs = getJobs()
   var searchRow = sheet.getRange(2, 1, 1, numberOfColumns).getDisplayValues()
