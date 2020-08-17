@@ -4,8 +4,10 @@ function setJobSkillValidation (sheet) {
   var searchRow = sheet.getRange(2, 1, 1, numberOfColumns).getDisplayValues()
 
   for (const job of searchRow) {
-    if (jobs.indexOf(job)) {
-      let jobSkills = getSkills(job)
+    let jobIndex = jobs.indexOf(job)
+    if (jobIndex) {
+      let jobSkills = getSkills(jobIndex)
+      let range = sheet.getRange(3, job, sheet.getMaxRows())
       let rule = SpreadsheetApp.newDataValidation()
         .requireValueInRange(jobSkills, true)
         .setAllowInvalid(true)
