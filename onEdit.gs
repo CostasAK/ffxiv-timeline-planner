@@ -1,5 +1,5 @@
 function onEdit () {
-  var activeSheet = SpreadsheetApp.getActiveSheet()
+  var sheet = SpreadsheetApp.getActiveSheet()
 
   setDataValidation(sheet)
 }
