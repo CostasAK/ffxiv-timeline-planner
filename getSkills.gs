@@ -1,6 +1,4 @@
-function getSkills (job) {
-  var jobs = getJobs()
-  var jobIndex = jobs.indexOf(job)
+function getSkills (jobIndex) {
   var maxSkills = SpreadsheetApp.getSheetByName('Jobs').getLastRow()
 
   var numberOfSkills = 0
