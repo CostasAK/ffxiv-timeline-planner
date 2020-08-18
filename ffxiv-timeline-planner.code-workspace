@@ -1,12 +1,18 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"files.associations": {
-			"*.gs": "javascript"
-		},
-	}
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "numso.prettier-standard-vscode"
+    ]
+  },
+  "settings": {
+    "files.associations": {
+      "*.gs": "javascript"
+    }
+  }
 }
