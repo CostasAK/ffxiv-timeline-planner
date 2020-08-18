@@ -5,7 +5,12 @@ function myOnEdit () {
   var sheet = SpreadsheetApp.getActiveSheet()
   console.info('Sheet name: ' + sheet.getName())
 
-  setDataValidation(sheet)
+  if (
+    sheet.getName() != 'Skills' &&
+    sheet.getName() != 'Jobs' &&
+    sheet.getName() != 'README'
+  )
+    setDataValidation(sheet)
 
   console.timeEnd(label)
 }
