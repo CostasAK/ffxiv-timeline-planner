@@ -11,7 +11,9 @@ function myOnEdit () {
     sheet.getName() != 'README'
   ) {
     setDataValidation(sheet)
-  } else if (sheet.getName() == 'Jobs' || sheet.getName() == 'Skills') {
+  } else if (sheet.getName() == 'Jobs') {
+    setJobSkills()
+  } else if (sheet.getName() == 'Skills') {
     setJobSkills()
   }
 
