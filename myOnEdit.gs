@@ -9,8 +9,11 @@ function myOnEdit () {
     sheet.getName() != 'Skills' &&
     sheet.getName() != 'Jobs' &&
     sheet.getName() != 'README'
-  )
+  ) {
     setDataValidation(sheet)
+  } else if (sheet.getName() == 'Jobs' || sheet.getName() == 'Skills') {
+    setJobSkills()
+  }
 
   console.timeEnd(label)
 }
