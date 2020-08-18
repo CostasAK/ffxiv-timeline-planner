@@ -1,16 +1,26 @@
 function setDataValidation (sheet) {
   var numberOfColumns = sheet.getLastColumn()
+  console.info('numberOfColumns: ' + numberOfColumns)
   var jobs = getJobs()
-  var searchRow = arrayToVector(
-    sheet.getRange(2, 1, 1, numberOfColumns).getDisplayValues()
-  )
+  console.info('jobs: ' + jobs)
+  if (numberOfColumns) {
+    var searchRow = arrayToVector(
+      sheet.getRange(2, 1, 1, numberOfColumns).getDisplayValues()
+    )
+    console.info('searchRow: ' + searchRow)
+  }
 
-  for (const job of searchRow) {
-    let jobIndex = jobs.indexOf(job) + 1
+  for (let i = 1; i <= numberOfColumns; i++) {
+    var job = searchRow[i - 1]
+    console.info('job: ' + job)
+    var jobIndex = jobs.indexOf(job) + 1
+    console.info('jobIndex: ' + jobIndex)
+    var range = sheet.getRange(3, i, sheet.getMaxRows())
+    range.clearDataValidations()
     if (jobIndex) {
-      let jobSkills = getSkills(jobIndex)
+      var jobSkills = getSkills(jobIndex)
+      console.info('jobSkills: ' + jobSkills.getDisplayValues())
       if (jobSkills) {
-        let range = sheet.getRange(3, jobIndex, sheet.getMaxRows())
         let rule = SpreadsheetApp.newDataValidation()
           .requireValueInRange(jobSkills, true)
           .setAllowInvalid(true)
