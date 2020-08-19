@@ -1,28 +1,22 @@
 function setDataValidation (sheet) {
-  var numberOfColumns = sheet.getLastColumn()
-  console.info('numberOfColumns: ' + numberOfColumns)
+  var currentRow = sheet.getActiveCell().getRow()
+  var currentColumn = sheet.getActiveCell().getColumn()
+  console.info('Active cell: ' + currentRow + ', ' + currentColumn)
 
-  var jobs = getJobs()
-  console.info('jobs: ' + jobs)
+  if (currentRow == 2) {
+    var jobs = getJobs()
+    console.info('jobs: ' + jobs)
 
-  if (numberOfColumns) {
-    var searchRow = arrayToVector(
-      sheet.getRange(2, 1, 1, numberOfColumns).getDisplayValues()
-    )
-    console.info('searchRow: ' + searchRow)
-  }
-
-  for (let i = 1; i <= numberOfColumns; i++) {
-    var job = searchRow[i - 1]
+    var job = sheet.getActiveCell().getDisplayValue()
     console.info('job: ' + job)
 
     var jobIndex = jobs.indexOf(job) + 1
     console.info('jobIndex: ' + jobIndex)
 
-    var range = sheet.getRange(3, i, sheet.getMaxRows())
+    var range = sheet.getRange(3, currentColumn, sheet.getMaxRows())
     range.clearDataValidations()
 
-    if (jobIndex) {
+    if (jobIndex > 0) {
       var jobSkills = getSkills(jobIndex)
       console.info('jobSkills: ' + jobSkills.getDisplayValues())
 
