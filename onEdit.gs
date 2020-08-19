@@ -11,6 +11,7 @@ function onEdit (e) {
     sheet.getName() != 'README'
   ) {
     setDataValidation(sheet)
+    setSkillColors(sheet)
   } else if (sheet.getName() == 'Jobs') {
     setJobSkills()
   } else if (sheet.getName() == 'Skills') {
